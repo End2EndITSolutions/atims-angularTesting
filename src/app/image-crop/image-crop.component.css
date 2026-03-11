@@ -1,0 +1,28 @@
+.croppedImage{
+    width:500px;
+}
+
+.container-image-cropper{
+    border: 1px solid rgba(0, 0, 0, 0.5);
+    display:flex;
+    width:1020px;
+    margin:0 auto;
+}
+
+.container-cropper{
+    display:block;
+    text-align: center;
+}
+
+.cropped-image{
+    width:500px;
+    padding: 5px;
+}
+
+.cropped-image img{
+    width:500px;
+}
+.cropper{
+    display:block;
+    width:500px;
+}

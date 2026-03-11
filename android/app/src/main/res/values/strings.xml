@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">AngularTest</string>
+    <string name="title_activity_main">AngularTest</string>
+    <string name="package_name">com.testbed.mihai</string>
+    <string name="custom_url_scheme">com.testbed.mihai</string>
+</resources>

@@ -1,0 +1,34 @@
+:host zxing-scanner::ng-deep {
+  max-height: 100vh;
+  width: 100vw;
+  object-fit: contain;
+  max-width: 100% !important;
+  max-height: 100% !important;
+  width: 100%;
+  height: 100%;
+  overflow-y: hidden;
+}
+
+::ng-deep video {
+  max-height: 100vh;
+  width: 100vw;
+  object-fit: contain;
+  padding:0;
+  margin:0;
+}
+
+.close-button{
+  position:absolute;
+  z-index: 999;
+  left:20px;
+  top:20px;
+  background-color: whitesmoke;
+}
+
+.switch-button{
+  position:absolute;
+  z-index: 999;
+  left:100px;
+  top:20px;
+  background-color: whitesmoke;
+}

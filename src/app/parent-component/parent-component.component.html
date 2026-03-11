@@ -1,0 +1,9 @@
+<h1>Parent: {{message}}</h1>
+<button (click)='loadLazyComponent()'>Parent Button</button>
+
+<div>
+    <input (change)="onChange($event)" type="text">
+    <button (click)='toggleComponent()'>Toggle Child</button>
+</div>
+
+<app-child-component *ngIf="showChildComponent" [incomingMessage]="message" (outgoingMessage)="resetMessage($event)"></app-child-component>    

@@ -1,0 +1,24 @@
+<!-- <h2 mat-dialog-title>Please Scan QR Code</h2> -->
+
+<!-- <mat-dialog-content class="qr-scanner-container">
+    <zxing-scanner  #scanner class="qr-scanner"
+    [enable]="zxingScanner"
+    (scanSuccess)="qrScanSuccess($event)"></zxing-scanner>
+</mat-dialog-content> -->
+
+<!-- <mat-dialog-actions>
+    <button mat-button mat-dialog-close>Cancel</button>
+</mat-dialog-actions> -->
+<button type="button" mat-fab color="basic" (click)="okToDelete()" matTooltip="Close Camera" class="close-button">
+    <mat-icon>close</mat-icon>
+</button>
+<button type="button" mat-fab color="basic" (click)="switchCamera()" matTooltip="Close Camera" class="switch-button">
+    <mat-icon>cameraswitch</mat-icon>
+</button>
+<zxing-scanner  #scanner class="qr-scanner"
+[enable]="zxingScanner"
+[(device)]="desiredDevice"
+(camerasFound)="camerasFoundHandler($event)"
+(scanError)="scanErrorHandler($event)"
+(scanSuccess)="qrScanSuccess($event)">
+</zxing-scanner>

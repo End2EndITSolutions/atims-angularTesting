@@ -1,0 +1,38 @@
+<div class="scanner-hide">
+    <div class="container-title">
+        <div class="toggle">
+            <button id="sidenav-toggle-main" mat-icon-button (click)="toggleSidenav()"><mat-icon>menu</mat-icon></button>
+        </div>
+        <div class="title">
+            <h1>{{title}}</h1>
+            <p>Mobile Storage Enabled: {{mobileStorageValid}}</p>
+            <p>Device OS: {{os}}</p>
+            <p>isMobile Check: {{isMobile()}}</p>
+        </div>
+    </div>
+    <mat-drawer-container autosize>
+        <mat-drawer #drawer mode="side" class="container-sidenav">
+            <p>{{title}}</p>
+            <button mat-stroked-button (click)="selectedComponent('FileUploadComponent')" routerLink="/file-upload">File Upload</button>
+            <button mat-stroked-button (click)="selectedComponent('LibraryTestComponent')" routerLink="/library-test">Library Test</button>
+            <button mat-stroked-button (click)="selectedComponent('BarcodeScanComponent')" routerLink="/barcode-scan">Barcode Scanner</button>
+            <button mat-stroked-button (click)="selectedComponent('ImageCropComponent')" routerLink="/image-crop">Image Crop</button>
+            <button mat-stroked-button (click)="selectedComponent('ParentComponentComponent')" routerLink="/parent-component">Parent Component</button>
+            <button mat-stroked-button (click)="selectedComponent('CapacitorBrowserComponent')" routerLink="/capacitor-browser">Browser</button>
+            <button mat-stroked-button (click)="selectedComponent('KeyboardTestComponent')" routerLink="/keyboard-test">Keyboard</button>
+        </mat-drawer>
+        <div class="container-content">
+            <h2>{{component}}</h2>
+            <router-outlet></router-outlet>
+        </div>
+    </mat-drawer-container>
+</div>
+
+
+<div class="scanner-ui">
+    ...Scanner Interface
+</div>
+
+<!-- <iframe  src ="https://demo6.atimsonline.com/JMS/Login" style="position:fixed; top:0; left:0; bottom:0; right:0; width:100%; height:100%; border:none; margin:0; padding:0; overflow:hidden; z-index:999999;">
+    ATIMS iFrame
+</iframe> -->

@@ -1,0 +1,25 @@
+<button mat-stroked-button color = "primary" (click)="scanBarcode()">Scan QR Code</button>
+<button mat-stroked-button color = "primary" (click)="takePicture()">Take Picture</button>
+<button mat-stroked-button color = "primary" (click)="getCameraServiceState()">Get Camera Service State</button>
+<button mat-stroked-button color = "primary" (click)="getMediaDevices()">Get Media Devices</button>
+<button mat-stroked-button color = "primary" (click)="sendMessageToiFrameParent()">Send Message to iframe parent</button>
+<button mat-stroked-button color = "primary" (click)="openDeleteDialog()">Toggle zxing-scanner</button>
+<button mat-stroked-button color = "primary" (click)="changeDataButton()">Reset data string</button>
+
+<!-- <p>{{data | json}}</p> -->
+<p>Data: {{data}}</p>
+<p>EventData: {{eventData}}</p>
+<p>Platform: {{platform}}</p>
+<p>{{image}}</p>
+
+<img [src]="imageUrl" width="50%"/>
+<!-- <webcam></webcam> -->
+<!-- <div *ngIf="scannerUI" id="test-area-qr-code-webcam">
+    <video></video>   
+</div> -->
+
+<!-- <zxing-scanner #scanner
+    [enable]="zxingScanner"
+    (scanSuccess)="qrScanSuccess($event)"
+></zxing-scanner>
+ -->

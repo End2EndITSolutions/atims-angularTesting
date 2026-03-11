@@ -1,0 +1,26 @@
+<button mat-stroked-button color="primary" (click)="onCameraButtonPress()">Add Picture</button>
+<input mat-stroked-button color="primary" type="file" accept="image/*;capture=camera" (change)="uploadFile($event)">
+<button mat-stroke-button color="primary" (click)="getUserMedia()">Get User Media Button</button>
+<div>
+  <h2>Picture Info:</h2>
+  <p>Camera Result Type: {{cameraResultType}}</p>
+  <p>Result Data: {{cameraResultData}}</p>
+  <p>Exif: {{cameraResultExif}}</p>
+  <p>Relative WebPath: {{cameraResultWebPath}}</p>
+
+  <h2>File Info:</h2>
+  <p>Path: {{inputFilePath}}</p>
+  <p>Relative Path: {{inputFileRelativePath}}</p>
+  <p>Size: {{inputFileSize}}</p>
+
+  <h2>Picture File Info:</h2>
+  <p>Name: {{imageFile?.name}}</p>
+  <p>Size: {{imageFile?.size}}</p>
+  <p>Type: {{imageFile?.type}}</p>
+  
+  <img id="imageTarget" [src]="cameraResultWebPath">
+</div>
+
+<div>
+    {{messages}}
+</div>

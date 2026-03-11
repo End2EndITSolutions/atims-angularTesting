@@ -1,0 +1,18 @@
+<h2>Upload Image</h2>
+<input type="file" (change)="fileChangeEvent($event)" />
+
+<div class="container-image-cropper">
+    <div class="container-cropper">
+        <h3>Original</h3>
+        <image-cropper class="cropper" [imageChangedEvent]="imageChangedEvent" [maintainAspectRatio]="true"
+            [aspectRatio]="4 / 3" format="jpeg" (imageCropped)="imageCropped($event)"
+            (imageLoaded)="imageLoaded($event)" (cropperReady)="cropperReady()" (loadImageFailed)="loadImageFailed()"
+            alignImage="center"></image-cropper>
+    </div>
+    <div class="container-cropper">
+        <h3>Cropped Image</h3>
+        <div class="cropped-image">
+            <img [src]="croppedImage" />
+        </div>
+    </div>
+</div>

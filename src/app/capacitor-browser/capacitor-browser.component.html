@@ -1,6 +1,6 @@
 <button mat-stroked-button (click)="open()">Open Browser</button>
-@if () {
-  <div !="isMobile">
+@if (isMobile) {
+  <div>
     <object type="application/pdf"
       data="http://www.africau.edu/images/default/sample.pdf"
       height="500px"

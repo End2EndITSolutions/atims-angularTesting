@@ -2,10 +2,14 @@
 <p>Input Text: {{inputText}}</p>
 <p>Form Values: {{inputForm.value}}</p>
 <input placeholder="Enter text" [(ngModel)]="inputText" #inputForm="ngModel" required (click)="inputClicked=true;">
-<div *ngIf="inputClicked">
+@if (inputClicked) {
+  <div>
     <p>Input Clicked</p>
     <p>Focused Pokemon: {{focusedPokemon}}</p>
-    <div *ngFor="let pokemon of pokemonTeam" (focus)="onFocus(pokemon)" (click)="onClick(pokemon)">
+    @for (pokemon of pokemonTeam; track pokemon) {
+      <div (focus)="onFocus(pokemon)" (click)="onClick(pokemon)">
         <p>{{pokemon}}</p>
-    </div>
-</div>
+      </div>
+    }
+  </div>
+}

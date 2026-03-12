@@ -1,43 +1,49 @@
 <button mat-stroked-button (click)="open()">Open Browser</button>
-<div *ngIf !="isMobile">
+@if () {
+  <div !="isMobile">
     <object type="application/pdf"
-    data="http://www.africau.edu/images/default/sample.pdf"
-    height="500px"
-    width="25%">
+      data="http://www.africau.edu/images/default/sample.pdf"
+      height="500px"
+      width="25%">
     </object>
-</div>
+  </div>
+}
 
-<div *ngIf="show">
+@if (show) {
+  <div>
     <h1>{{data}}</h1>
-</div>
+  </div>
+}
 
 <button (click) = "openDynamicImaging('PCJ')">Open URL New Tab</button>
 
 <div>
-    <a href="http://www.africau.edu/images/default/sample.pdf" download>
-        <img src="../../favicon.ico" alt="PDF download" width="104" height="142">
-      </a>
-    <!-- <button mat-stroked-button (click)="saveFile()">Save File</button> -->
-    <h2>FileSystem API Usage</h2>
-    {{filesystemData}}
-    {{filesystemError}}
+  <a href="http://www.africau.edu/images/default/sample.pdf" download>
+    <img src="../../favicon.ico" alt="PDF download" width="104" height="142">
+  </a>
+  <!-- <button mat-stroked-button (click)="saveFile()">Save File</button> -->
+  <h2>FileSystem API Usage</h2>
+  {{filesystemData}}
+  {{filesystemError}}
 </div>
 
 
 <div>
-    <p>Upload file that you want to be saved to the directory then the file is opened</p>
-    <input type="file" (change)="onChange($event)">
-    <h3>File Content</h3>
+  <p>Upload file that you want to be saved to the directory then the file is opened</p>
+  <input type="file" (change)="onChange($event)">
+  <h3>File Content</h3>
 </div>
 
 <div>
-    <p>iframe with outside link.</p>
-    <iframe [src]="sanitize(link)" height="400" width="400">
-    </iframe>
-    <p>iframe using base64 encoding of pdf</p>
-    <iframe [src]="sanitize(base64PDF)" height="400" width="400"></iframe>
-    <div *ngIf="fileSaved">
-        <p>iframe using saved file!</p>
-        <iframe [src]="sanitize(fileURI)" height="400" width="400"></iframe>
+  <p>iframe with outside link.</p>
+  <iframe [src]="sanitize(link)" height="400" width="400">
+  </iframe>
+  <p>iframe using base64 encoding of pdf</p>
+  <iframe [src]="sanitize(base64PDF)" height="400" width="400"></iframe>
+  @if (fileSaved) {
+    <div>
+      <p>iframe using saved file!</p>
+      <iframe [src]="sanitize(fileURI)" height="400" width="400"></iframe>
     </div>
+  }
 </div>

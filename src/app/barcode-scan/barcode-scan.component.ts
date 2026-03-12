@@ -1,5 +1,4 @@
 import { Component, EventEmitter, OnInit, Output, Signal, ViewChild } from '@angular/core';
-import { BarcodeScanner, ScanResult } from '@capacitor-community/barcode-scanner';
 import { Camera } from '@capacitor/camera';
 import { Device } from '@capacitor/device';
 import { CameraService } from '../camera.service';
